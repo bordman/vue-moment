@@ -144,7 +144,14 @@ module.exports = {
 
 						date = date.calendar(referenceTime);
 						break;
-
+					case 'utc': {
+					  /*
+					     * Mutates the original moment by converting to UTC
+					     * https://momentjs.com/docs/#/manipulating/utc/
+					     */
+					    date.utc();
+					    break;
+					  }
 					case 'timezone':
 						// Mutates the original moment by converting to a new timezone.
 						// https://momentjs.com/timezone/docs/#/using-timezones/converting-to-zone/
